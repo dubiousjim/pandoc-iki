@@ -16,35 +16,35 @@ blocks and `inline code spans`.
 
 ### Available in Ikiwiki's web preferences ###
 
-#. File extension for Markdown files (defaults to mdwn)
+1. File extension for Markdown files (defaults to mdwn)
 
-#. Use smart quotes, dashes, and ellipses
+1. Use smart quotes, dashes, and ellipses
 
-#. Generate ASCII instead of UTF8.
+1. Generate ASCII instead of UTF8.
 
-#. Number section headings in generated pages
+1. Number section headings in generated pages
 
-#. Wrap sections in `<div>` tags (or `<section>` tags in HTML5), and
+1. Wrap sections in `<div>` tags (or `<section>` tags in HTML5), and
    attach identifiers to the `<div>` rather than th header itself. This
    allows the section to be styled or manipulated via javascript.
 
-#. Obfuscate emails using HTML character references
+1. Obfuscate emails using HTML character references
 
-#. Generate HTML5 (the Ikiwiki html5 setting should also be set)
+1. Generate HTML5 (the Ikiwiki html5 setting should also be set)
 
-#. Classes to use for all indented code blocks (these can also be 
+1. Classes to use for all indented code blocks (these can also be 
    specified differently from block to block; see below)
 
 
 ### Have to be configured manually in your wiki's *.setup file ###
 
-#. Path to pandoc executable (defaults to /usr/local/bin/pandoc)
+1. Path to pandoc executable (defaults to /usr/local/bin/pandoc)
 
-#. Enable Pandoc processing of LaTeX documents
+1. Enable Pandoc processing of LaTeX documents
 
-#. Enable Pandoc processing of reStructuredText documents
+1. Enable Pandoc processing of reStructuredText documents
 
-#. Method for handling inline TeX (see below)
+1. Method for handling inline TeX (see below)
 
 
 ## Details ##
@@ -96,21 +96,21 @@ Pandoc has a native [table-handling syntax](http://johnmacfarlane.net/pandoc/REA
 
 Pandoc recognizes inline TeX and can be configured to display it on the web using a variety of tools.
 
-#. You can use MathJax <http://www.mathjax.org/>. This requires copying the `mathjax.tmpl` file that accompanies this plugin to a template directory seen by your wiki. Rename the file to `page.tmpl`. (Available since Pandoc 1.8.)
+1. You can use MathJax <http://www.mathjax.org/>. This requires copying the `mathjax.tmpl` file that accompanies this plugin to a template directory seen by your wiki. Rename the file to `page.tmpl`. (Available since Pandoc 1.8.)
 
-#. jsMath is the predecessor to MathJax. It doesn't give as nice results, and is harder to install, but it's also an option. Download jsMath and jsMath-fonts <http://www.math.union.edu/~dpvc/jsMath/> and install them so that they're served from the root of your server, that is, from `/jsMath/...` Also, copy the file `jsmath.tmpl` that accompanies this plugin to a template directory seen by your wiki. Rename the file to `page.tmpl`.
+1. jsMath is the predecessor to MathJax. It doesn't give as nice results, and is harder to install, but it's also an option. Download jsMath and jsMath-fonts <http://www.math.union.edu/~dpvc/jsMath/> and install them so that they're served from the root of your server, that is, from `/jsMath/...` Also, copy the file `jsmath.tmpl` that accompanies this plugin to a template directory seen by your wiki. Rename the file to `page.tmpl`.
 
-#. A different JavaScript solution is LatexMathML <http://math.etsu.edu/LaTeXMathML/>. Again, this gives less good results than MathJax, but it's easier to install than jsMath. Download the `LaTeXMathML.js` and `LaTeXMathML.standardarticle.css` files and install them so that they're served from the root of your server.  Also, copy the file `latexmathml.tmpl` that accompanies this plugin to a template directory seen by your wiki. Rename the file to `page.tmpl`.
+1. A different JavaScript solution is LatexMathML <http://math.etsu.edu/LaTeXMathML/>. Again, this gives less good results than MathJax, but it's easier to install than jsMath. Download the `LaTeXMathML.js` and `LaTeXMathML.standardarticle.css` files and install them so that they're served from the root of your server.  Also, copy the file `latexmathml.tmpl` that accompanies this plugin to a template directory seen by your wiki. Rename the file to `page.tmpl`.
 
-#. Instead of using JavaScript, a different approach is to build and install a cgi on your server. MathTeX <http://www.forkosh.com/mathtex.html> gives good results, but needs LaTeX to be available on the server. This plugin assumes that if you're using MathTeX, it will be served from `/cgi-bin/mathtex.cgi`.
+1. Instead of using JavaScript, a different approach is to build and install a cgi on your server. MathTeX <http://www.forkosh.com/mathtex.html> gives good results, but needs LaTeX to be available on the server. This plugin assumes that if you're using MathTeX, it will be served from `/cgi-bin/mathtex.cgi`.
 
-#. MimeTeX <http://www.forkosh.com/mimetex.html> is the predecessor to MathTeX. It doesn't give as nice results, but will work on less equipped servers. This plugin assumes that if you're using MimeTeX, it will be served from `/cgi-bin/mimetex.cgi`.
+1. MimeTeX <http://www.forkosh.com/mimetex.html> is the predecessor to MathTeX. It doesn't give as nice results, but will work on less equipped servers. This plugin assumes that if you're using MimeTeX, it will be served from `/cgi-bin/mimetex.cgi`.
 
-#. Or you could use a third-party cgi, such as Google Charts API <http://code.google.com/apis/chart/>. (Available since Pandoc 1.6.)
+1. Or you could use a third-party cgi, such as Google Charts API <http://code.google.com/apis/chart/>. (Available since Pandoc 1.6.)
 
-#. Another option is to directly render the TeX into MathML. Browser support for displaying MathML is coming slowly. Firefox supports it well, but WebKit/Chrome is only beginning to. To process inline TeX via this method, copy the file `mathml.tmpl` that accompanies this plugin to a template directory seen by your wiki. Rename the file to `page.tmpl`. You should also arrange for the file `mathml.js` to be served from the root of your server; this file helps provide a better fallbacks for browsers that can't display the MathML. This method also requires htmlscrubber to be disabled, at least for pages containing MathML. (Available since Pandoc 1.5.)
+1. Another option is to directly render the TeX into MathML. Browser support for displaying MathML is coming slowly. Firefox supports it well, but WebKit/Chrome is only beginning to. To process inline TeX via this method, copy the file `mathml.tmpl` that accompanies this plugin to a template directory seen by your wiki. Rename the file to `page.tmpl`. You should also arrange for the file `mathml.js` to be served from the root of your server; this file helps provide a better fallbacks for browsers that can't display the MathML. This method also requires htmlscrubber to be disabled, at least for pages containing MathML. (Available since Pandoc 1.5.)
 
-#. If none of the other options are enabled, Pandoc will attempt to render inline TeX using Unicode characters, in so far as that's possible.
+1. If none of the other options are enabled, Pandoc will attempt to render inline TeX using Unicode characters, in so far as that's possible.
 
 
 If none of these options work for you, you could check out the [teximg plugin](http://ikiwiki.info/plugins/teximg/); this works something like MathTex, above. You could also look into using
